@@ -4,7 +4,7 @@ use gpui::{
     Refineable, StyleRefinement, Styled, Window, div, point, px,
 };
 use serde::{Deserialize, Serialize};
-
+use crate::PixelsExt;
 /// Returns a `Div` as horizontal flex layout.
 #[inline(always)]
 pub fn h_flex() -> Div {

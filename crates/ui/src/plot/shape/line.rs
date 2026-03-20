@@ -6,7 +6,7 @@ use gpui::{
 };
 
 use crate::plot::{StrokeStyle, origin_point};
-
+use crate::PixelsExt;
 #[allow(clippy::type_complexity)]
 pub struct Line<T> {
     data: Vec<T>,

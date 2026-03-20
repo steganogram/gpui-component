@@ -15,7 +15,7 @@ use crate::{
 };
 
 use super::build_band_x_labels;
-
+use crate::PixelsExt;
 #[derive(IntoPlot)]
 pub struct BarChart<T, X, Y>
 where

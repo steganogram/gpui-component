@@ -11,7 +11,7 @@ use crate::{
         shape::{Arc, ArcData, Pie},
     },
 };
-
+use crate::PixelsExt;
 #[derive(IntoPlot)]
 pub struct PieChart<T: 'static> {
     data: Vec<T>,

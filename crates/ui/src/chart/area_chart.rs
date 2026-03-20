@@ -14,7 +14,7 @@ use crate::{
 };
 
 use super::build_point_x_labels;
-
+use crate::PixelsExt;
 #[derive(IntoPlot)]
 pub struct AreaChart<T, X, Y>
 where

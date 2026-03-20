@@ -11,7 +11,7 @@ use gpui::{
     Styled, Window, div, list, prelude::FluentBuilder, px,
 };
 use std::rc::Rc;
-
+use crate::PixelsExt;
 mod footer;
 mod group;
 mod header;

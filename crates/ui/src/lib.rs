@@ -1,6 +1,18 @@
 use gpui::{App, SharedString};
 use std::ops::Deref;
 
+/// Compatibility shim: gpui removed `Pixels::as_f32()`, replacing it with
+/// `From<Pixels> for f32`. This trait restores the ergonomic call-site syntax.
+pub(crate) trait PixelsExt {
+    fn as_f32(&self) -> f32;
+}
+
+impl PixelsExt for gpui::Pixels {
+    fn as_f32(&self) -> f32 {
+        f32::from(*self)
+    }
+}
+
 mod anchored;
 mod element_ext;
 mod event;

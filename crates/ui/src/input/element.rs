@@ -17,7 +17,7 @@ use crate::{
 };
 
 use super::{InputState, LastLayout, WhitespaceIndicators, mode::InputMode};
-
+use crate::PixelsExt;
 const BOTTOM_MARGIN_ROWS: usize = 3;
 pub(super) const RIGHT_MARGIN: Pixels = px(10.);
 pub(super) const LINE_NUMBER_RIGHT_MARGIN: Pixels = px(10.);

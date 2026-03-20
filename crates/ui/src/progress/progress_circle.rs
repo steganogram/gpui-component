@@ -11,7 +11,7 @@ use std::time::Duration;
 
 use super::ProgressState;
 use crate::plot::shape::{Arc, ArcData};
-
+use crate::PixelsExt;
 /// A circular progress indicator element.
 #[derive(IntoElement)]
 pub struct ProgressCircle {

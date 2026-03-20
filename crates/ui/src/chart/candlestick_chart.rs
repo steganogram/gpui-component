@@ -13,7 +13,7 @@ use crate::{
 };
 
 use super::build_band_x_labels;
-
+use crate::PixelsExt;
 #[derive(IntoPlot)]
 pub struct CandlestickChart<T, X, Y>
 where

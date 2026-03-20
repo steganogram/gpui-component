@@ -399,6 +399,8 @@ pub struct NotificationSettings {
     pub margins: Edges<Pixels>,
     /// The maximum number of notifications to show at once, default: 10
     pub max_items: usize,
+    /// Duration in seconds before auto-hiding notifications, default: 5
+    pub autohide_secs: u64,
 }
 
 impl Default for NotificationSettings {
@@ -413,6 +415,7 @@ impl Default for NotificationSettings {
                 left: offset,
             },
             max_items: 10,
+            autohide_secs: 5,
         }
     }
 }
@@ -459,9 +462,9 @@ impl NotificationList {
 
         self.notifications.push_back(notification.clone());
         if autohide {
-            // Sleep for 5 seconds to autohide the notification
+            let duration_secs = cx.theme().notification.autohide_secs;
             cx.spawn_in(window, async move |_, cx| {
-                Timer::after(Duration::from_secs(5)).await;
+                Timer::after(Duration::from_secs(duration_secs)).await;
 
                 if let Err(err) =
                     notification.update_in(cx, |note, window, cx| note.dismiss(window, cx))
